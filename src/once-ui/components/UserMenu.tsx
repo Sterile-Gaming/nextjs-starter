@@ -1,11 +1,9 @@
-"use client";
-
 import React from 'react';
 import classNames from 'classnames';
 
 import { Flex, DropdownWrapper, DropdownProps, User, UserProps } from '.';
 import { DropdownOptions } from '.';
-import styles from './UserMenu.module.scss'
+import styles from './UserMenu.module.scss';
 
 interface UserMenuProps extends UserProps {
     selected?: boolean;
@@ -23,6 +21,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     className,
     ...userProps
 }) => {
+
     return (
         <DropdownWrapper
             dropdownOptions={dropdownOptions}
@@ -34,7 +33,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 border={selected ? 'neutral-medium' : 'transparent'}
                 background={selected ? 'neutral-strong' : 'transparent'}
                 style={{ cursor: 'pointer' }}
-                className={classNames(className || '', selected ? styles.selected : '', styles.wrapper)}>
+                className={classNames(className || '', selected ? styles.selected : '', styles.wrapper)}
+            >
                 <User {...userProps} />
             </Flex>
         </DropdownWrapper>
